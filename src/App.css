@@ -1,0 +1,359 @@
+.app {
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 2.25rem 1.75rem 4.5rem;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  max-width: 900px;
+  padding: 1.9rem 1.6rem 2.2rem;
+  border-radius: 32px;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 248, 0.97), rgba(255, 247, 241, 0.9)),
+    radial-gradient(circle at top right, rgba(162, 79, 52, 0.08), transparent 42%);
+  border: 1px solid rgba(128, 102, 84, 0.12);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  pointer-events: none;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  margin: 0 0 0.55rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.user-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(162, 79, 52, 0.14);
+  box-shadow: 0 10px 18px rgba(162, 79, 52, 0.08);
+}
+
+.user-name {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.page-shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 285px) minmax(0, 780px) minmax(220px, 285px);
+  gap: 1.8rem;
+  align-items: start;
+  justify-content: center;
+}
+
+.auth-page-shell {
+  align-items: stretch;
+}
+
+.app:has(.auth-page-shell) .header-top {
+  justify-content: center;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.main-column {
+  min-width: 0;
+}
+
+.auth-main {
+  justify-content: center;
+  min-height: 680px;
+  padding-top: 0.5rem;
+}
+
+.side-lookbook {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.lookbook-card {
+  min-height: 305px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.4rem;
+  border-radius: 34px;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.lookbook-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.04), rgba(17, 24, 39, 0.7));
+  pointer-events: none;
+}
+
+.lookbook-copy {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.lookbook-kicker {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.lookbook-copy h3 {
+  margin: 0;
+  font-size: 1.42rem;
+}
+
+.lookbook-copy p {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.65rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+}
+
+.card h2 {
+  font-size: 1.28rem;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.section-wardrobe,
+.section-context {
+  margin: 0;
+}
+
+.auth-card {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.auth-card h2,
+.auth-card .tagline {
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin-top: 0.95rem;
+  max-width: 420px;
+}
+
+.auth-card .login-form {
+  max-width: none;
+}
+
+.login-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.login-btn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.login-error {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--error);
+}
+
+.auth-switch {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  filter: brightness(1.2);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.35rem;
+}
+
+.btn {
+  padding: 0.82rem 1.55rem;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.12s, box-shadow 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 16px 30px rgba(162, 79, 52, 0.28);
+}
+
+.btn-primary:not(:disabled):hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: #f6ebe2;
+  border-color: rgba(162, 79, 52, 0.22);
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.message-error {
+  background: rgba(199, 93, 93, 0.15);
+  color: var(--error);
+  border: 1px solid rgba(199, 93, 93, 0.4);
+}
+
+.wardrobe-summary {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.wardrobe-empty {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 1100px) {
+  .app {
+    max-width: 860px;
+  }
+
+  .page-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .side-lookbook {
+    display: none;
+  }
+
+  .auth-main {
+    min-height: auto;
+  }
+
+  .auth-card {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+    padding: 1.35rem 1rem 1.6rem;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .login-form {
+    max-width: none;
+  }
+
+  .auth-card {
+    padding: 1.4rem;
+  }
+}

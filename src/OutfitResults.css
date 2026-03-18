@@ -1,0 +1,59 @@
+.results h2 {
+  margin-bottom: 1rem;
+}
+
+.outfits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.outfit-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.outfit-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+
+.outfit-items {
+  margin: 0 0 0.5rem;
+  padding-left: 1.25rem;
+  color: var(--text);
+}
+
+.outfit-items li {
+  margin-bottom: 0.2rem;
+}
+
+.reasoning {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.suggested-purchase {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+.suggested-purchase h3 {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+  color: var(--success);
+}
+
+.suggested-purchase p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}

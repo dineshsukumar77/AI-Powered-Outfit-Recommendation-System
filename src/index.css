@@ -1,0 +1,67 @@
+:root {
+  --bg: #f8f3ee;
+  --bg-gradient:
+    radial-gradient(circle at top left, rgba(255, 248, 242, 0.96) 0%, rgba(248, 243, 238, 0.92) 38%, rgba(237, 244, 250, 0.92) 100%);
+  --surface: rgba(255, 251, 247, 0.9);
+  --surface2: rgba(255, 255, 255, 0.96);
+  --border: rgba(128, 102, 84, 0.16);
+  --text: #1f1814;
+  --text-muted: #6f6158;
+  --accent: #a24f34;
+  --accent-soft: rgba(162, 79, 52, 0.1);
+  --success: #21825c;
+  --error: #d24638;
+  --radius: 18px;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --shadow-lg: 0 24px 60px rgba(73, 49, 35, 0.14);
+  --shadow-md: 0 16px 36px rgba(73, 49, 35, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-gradient);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input,
+select,
+textarea,
+button {
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(162, 79, 52, 0.55);
+  box-shadow: 0 0 0 4px rgba(162, 79, 52, 0.12);
+}

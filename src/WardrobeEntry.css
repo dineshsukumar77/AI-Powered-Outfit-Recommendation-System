@@ -1,0 +1,207 @@
+.wardrobe-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Shared grid: 5 columns desktop, same structure for header and rows */
+.wardrobe-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 2fr) minmax(90px, 1.2fr) minmax(100px, 1.5fr) minmax(70px, 0.8fr) 2.25rem;
+  gap: 0.55rem 0.8rem;
+  align-items: center;
+  padding: 0.9rem 0.95rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(128, 102, 84, 0.08);
+}
+
+.wardrobe-row--header {
+  padding: 0 0 0.3rem;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.15rem;
+}
+
+.wardrobe-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+
+.wardrobe-label--action {
+  min-width: 2.25rem;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input-name {
+  grid-column: 1;
+}
+
+.input-category {
+  grid-column: 2;
+}
+
+.input-desc {
+  grid-column: 3;
+}
+
+.input-color {
+  grid-column: 4;
+}
+
+.btn-remove {
+  grid-column: 5;
+  justify-self: end;
+}
+
+/* Tablet: slightly tighter, same 5 columns */
+@media (max-width: 900px) {
+  .wardrobe-row {
+    grid-template-columns: minmax(100px, 1.8fr) minmax(80px, 1fr) minmax(80px, 1.2fr) minmax(60px, 0.7fr) 2.25rem;
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile: 2-column layout, stacked fields */
+@media (max-width: 640px) {
+  .wardrobe-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .wardrobe-row--header {
+    display: none;
+  }
+
+  .wardrobe-row .input-name {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .wardrobe-row .input-category {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .wardrobe-row .input-desc {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .wardrobe-row .input-color {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .wardrobe-row .btn-remove {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: end;
+  }
+}
+
+.btn-remove {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove:hover:not(:disabled) {
+  background: var(--error);
+  border-color: var(--error);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-remove:disabled {
+  opacity: 0.4;
+}
+
+.wardrobe-upload {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.55rem;
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px dashed rgba(162, 79, 52, 0.24);
+}
+
+.wardrobe-upload-input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.extract-success {
+  width: 100%;
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--success);
+}
+
+.wardrobe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.45rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 480px) {
+  .wardrobe-actions {
+    flex-direction: column;
+  }
+  .wardrobe-actions .btn {
+    width: 100%;
+  }
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.save-error {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
